@@ -1,10 +1,28 @@
+<!DOCTYPE html>
 <html>
-   <head>
-        <title>Test js webview</title>
-   </head>
-   <body>
-        <p><button onclick="windowtest.postMessage('1,2,3')">windowtest.postMessage</button></p>
-      <p><button onclick="window.close()">close</button></p>
-      <p><button onclick="window.open("https://kimnhuttruong.github.io/test-webview/")">open</button></p>
-   </body>
+<body>
+
+<p>Click the button to write some text in the new window and the source (parent) window.</p>
+
+<button onclick="myFunction()">Try it</button>
+<p><button onclick="myFunctionClose()">close</button></p>
+<script>
+  function myFunction() {
+  console.log('startOpen');
+    window.open("",  '_self', "width=200,height=100");
+    console.log('endOpen');
+  }
+</script>
+<script>
+  function myFunctionClose() {
+   console.log('startClose');
+   window.close();
+    console.log('endClose');
+  }
+</script>
+
+</body>
 </html>
+
+
+
