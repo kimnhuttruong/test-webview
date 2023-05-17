@@ -1,28 +1,23 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <title>Ví dụ sử dụng window.close()</title>
+    <script>
+        function openWindow() {
+            // Mở cửa sổ mới
+            var newWindow = window.open("", "_blank", "width=400,height=200");
+            
+            // Thêm nút "Đóng cửa sổ" vào cửa sổ mới
+            var closeButton = document.createElement("button");
+            closeButton.innerHTML = "Đóng cửa sổ";
+            closeButton.onclick = function() {
+                newWindow.close(); // Đóng cửa sổ mới
+            };
+            newWindow.document.body.appendChild(closeButton);
+        }
+    </script>
+</head>
 <body>
-
-<p>Click the button to write some text in the new window and the source (parent) window.</p>
-
-<button onclick="myFunction()">Try it</button>
-<p><button onclick="myFunctionClose()">close</button></p>
-<script>
-  function myFunction() {
-  console.log('startOpen');
-    window.open("",  '_self', "width=200,height=100");
-    console.log('endOpen');
-  }
-</script>
-<script>
-  function myFunctionClose() {
-   console.log('startClose');
-   window.close();
-    console.log('endClose');
-  }
-</script>
-
+    <button onclick="openWindow()">Mở cửa sổ</button>
 </body>
 </html>
-
-
-
